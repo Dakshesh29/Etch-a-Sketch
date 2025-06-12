@@ -1,11 +1,11 @@
 const container = document.getElementById('container')
-
-
 let cells = document.getElementsByClassName('cells')
 
+let sizes = ''
+
 function grid(){
-    makeRows(20);
-    makeColumns(20);
+    makeRows(sizes);
+    makeColumns(sizes);
 }
 
 function makeRows(rowsNums){
@@ -27,4 +27,55 @@ function makeColumns(cellNums){
 
 grid()
 
+let mode = ''
+
+let draw = document.getElementById('drawbtn')
+
+draw.addEventListener('click',function(){
+    mode = 'draw'
+})
+
+let erase = document.getElementById('erasebtn')
+
+erase.addEventListener('click',function(){
+    mode = 'erase'
+})
+
+
+
+for(let i = 0; i < cells.length;i++){
+    cells[i].addEventListener('mouseover' , function(){
+        if(mode === 'draw'){
+            cells[i].style.background = 'black'
+        }else if(mode === 'erase'){
+            cells[i].style.background = 'white'
+        }
+    })
+}
+
+let input = document.getElementById('gridSize')
+let button = document.getElementById('makeGridBtn')
+
+
+
+button.addEventListener('click', function(){
+    const size = input.value
+    sizes = size
+
+    container.innerHTML = ""
+
+    grid()
+
+    let cells = document.getElementsByClassName('cells')
+    for(let i = 0; i < cells.length;i++){
+    cells[i].addEventListener('mouseover' , function(){
+        if(mode === 'draw'){
+            cells[i].style.background = 'black'
+        }else if(mode === 'erase'){
+            cells[i].style.background = 'white'
+        }
+    })
+}
+
+})
 

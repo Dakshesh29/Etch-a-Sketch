@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px;
 }
 
 h1{
@@ -21,6 +22,42 @@ h1{
     box-sizing: border-box;
 }
 
-.cells:hover{
-    background-color: grey;
+.second-container{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
 }
+
+#drawbtn, #erasebtn{
+    margin: 10px;
+    height: 30px;
+    width: 80px;
+    font-size: 15px;
+    font-family: Roboto;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #24a0ed;
+}
+
+#gridSize{
+    margin: 10px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#makeGridBtn{
+    margin: 10px;
+    height: 30px;
+    width: 100px;
+    font-size: 15px;
+    font-family: Roboto;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #24a0ed;
+}
+
